@@ -1,4 +1,8 @@
 class ArticlesController < ApplicationController
+    
+    #TODO - Devise / Authlogic
+    http_basic_authenticate_with name: "sss", password: "secret", except: [:index, :show]
+    
     def index
         @articles = Article.all
     end

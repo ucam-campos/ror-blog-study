@@ -1,4 +1,8 @@
 class CommentsController < ApplicationController
+    
+    #TODO - Devise / Authlogic
+    http_basic_authenticate_with name: "sss", password: "secret", except: [:index, :show]
+    
     def create
         @article = Article.find(params[:article_id])
         @comment = @article.comments.create(comment_params)
